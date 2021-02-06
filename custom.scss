@@ -1,0 +1,24 @@
+// Bootstrap SASS
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+
+body {
+  background: linear-gradient(246.8deg, #88A4EC 0%, #3362D8 100%);
+  color: #FFFFFF;
+
+  font: 50px 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  line-height: 54px;
+  letter-spacing: 0em;
+  text-align: left;
+    
+  #copy {
+    position: absolute;
+  }
+}
+  
+
+
