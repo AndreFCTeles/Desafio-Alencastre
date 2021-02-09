@@ -1,6 +1,14 @@
 {
+  "scripts": {
+    "start": "npx serve -s -l 80 public",
+    "build": "sass custom.scss public/custom.css"
+  },
   "dependencies": {
+    "bootstrap": "^5.0.0-beta1",
     "jquery": "^3.5.1",
     "sass": "^1.32.6"
+  },
+  "devDependencies": {
+    "serve": "^11.3.2"
   }
 }
