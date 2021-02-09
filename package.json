@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "npx serve -s -l 80 public",
-    "build": "sass CustomSCSS.scss CustomCSS.css"
+    "build": "sass CustomSCSS.scss public/CustomCSS.css"
   },
   "dependencies": {
     "bootstrap": "^5.0.0-beta1",
