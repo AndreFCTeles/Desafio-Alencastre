@@ -1,0 +1,11 @@
+body {
+  background: linear-gradient(246.8deg, #88A4EC 0%, #3362D8 100%);
+  color: #FFFFFF;
+  font-family: "Montserrat", sans-serif;
+  text-align: left;
+}
+
+body #results {
+  background: #FFFFFF;
+}
+/*# sourceMappingURL=CustomSCSS.css.map */

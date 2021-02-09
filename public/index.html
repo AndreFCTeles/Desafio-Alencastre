@@ -8,9 +8,10 @@
             <!-- Bootstrap CSS -->
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
             <!-- Font CSS -->
-            <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
             <!-- Custom CSS -->
-            <link href="custom.css" rel="stylesheet">
+            <link href="CustomCSS.css" rel="stylesheet">
 
         <!-- JavaScript -->
             <!-- SCSS -->
@@ -19,8 +20,10 @@
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>            
             <!-- Bootstrap JS -->
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>     
+            <!-- FontAwesome JS -->   
+            <script src="https://kit.fontawesome.com/96e17eaedb.js" crossorigin="anonymous"></script>
             <!-- Custom JS -->   
-            <script src="js.js"></script>
+            <script src="CustomJS.js"></script>
         
 
 
@@ -124,27 +127,32 @@
                         <div class="container mt-5 p-4">
                             <div class="input-group mb-3"> 
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" id="goSearch"><img src="glass.png"></img></button>
+                                    <button class="btn btn-light" id="goSearch"><i class="fas fa-search"></i></button>
                                 </div>
-                                <input type="text" class="form-control" id="CitySearch">
+                                <input type="text" class="form-control" id="CitySearch" placeholder="Search for a specific city...">
                             </div>                            
                         </div>
                     </div>
                 </div>
             </div><!-- /search nav -->
             <div class="row"><!-- results container -->
-                <div class="container-fluid">
+                <div class="container-fluid" id="results">
                     
-                    <p id="error"></p>´
+                    <p id="error"></p>
 
-                    
-                    <p id="datetime"></p>
-                    <p id="countryiso"></p>
+                    <p id="cityname"></p>
+                    <p id="countrycode"></p>
+                    <p id="coords"></p>
+
+                    <p>Today</p>
+                    <p id="date"></p>
+
                     <p id="temp"></p>
-                    <p id="weather"></p>
+
+                    <p id="maxmin"></p>
                     <p id="wind"></p>
-                    <p id="pressure"></p>
                     <p id="humidity"></p>
+                    <p id="pressure"></p>
                 </div>
             </div><!-- /results container -->
         </div><!-- /container MainContainer -->
