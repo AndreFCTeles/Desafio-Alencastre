@@ -4,5 +4,8 @@ body {
   font-family: "Montserrat", sans-serif;
   text-align: left;
 }
+body #results {
+  background: #FFFFFF;
+}
 
 /*# sourceMappingURL=CustomCSS.css.map */
