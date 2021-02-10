@@ -9,26 +9,53 @@ $(document).ready(function () {
             console.log(result)
                 
             // Populating HTML
-            $('#CityCountry').html(result.name + ', ' + result.sys.country + '<small id="coords">&nbsp&nbsp&nbsp&nbsp<i class="fas fa-map-pin"></i>[' + result.coord.lat + ', ' + result.coord.lon + ']</small>');
+            $('#CityCountry').html(
+                result.name + ', ' + result.sys.country +
+                '<small class="smallText blueText" id="pin">&nbsp&nbsp&nbsp&nbsp<i class="fas fa-map-pin"></i></small><small class="smallText" id="coords"> [' +
+                result.coord.lat + ', ' + result.coord.lon + ']</small>');
             // calculations for the date/time
                 var dateresult = new Date(result.dt*1000);
                 var day = dateresult.getDate();
                 var month = dateresult.getMonth();
                 var year = dateresult.getFullYear();
-            $('#date').html('<div id="today">Today</div><div id="todaydate">' + day + '/' + month + '/' + year + '</div>'); 
-            $('#temp').html(result.main.temp);
-                //if para o icone aqui, ou noutra function / outro método?    
-            $('#maxmin').html(result.main.temp_max + '&deg; / ' + result.main.temp_min + '&deg;');
-            $('#wind').html(result.wind.speed + 'm/s');
-            $('#humidity').html(result.main.humidity);
-            $('#pressure').html(result.main.pressure);
+            $('#date').html('<div class="m-0"><h5 id="today" class="m-0 orangeText">Today</h5></div><div class="smallText" id="todaydate">' + day + '/' + month + '/' + year + '</div>'); 
+            //removing decimals from temp results
+                var truncatedtemp = Math.trunc(result.main.temp);
+                var tempimg;
+                if ( (truncatedtemp>=0) && (truncatedtemp<=10) ) {
+                    tempimg = '<i class="far fa-snowflake';
+                } else if ( (truncatedtemp>=11) && (truncatedtemp<=25) ){
+                    tempimg = '<i class="far fa-sun';
+                } else if ( (truncatedtemp>=26) && (truncatedtemp<=50) ){
+                    tempimg = '<i class="fas fa-fire';
+                } else {
+                    tempimg = '<i class="fas fa-icicles';
+                }
+            $('#temp').html(tempimg + ' orangeText"></i> ' + truncatedtemp);
+                var truncatedmax = Math.trunc(result.main.temp_max);
+                var truncatedmin = Math.trunc(result.main.temp_min);
+            $('#maxmin').html('<i class="fas fa-temperature-low orangeText"></i> ' + truncatedmax + '&deg; / ' + truncatedmin + '&deg;');
+            $('#wind').html('<i class="fas fa-wind orangeText"></i> ' + result.wind.speed + ' m/s');
+
+
+            $('#humidity').html('<img src="humid-orange.png"> ' + result.main.humidity + '&deg;');
+                // making humidity symbol image the same size as the text
+                $("#humidity").find('img').css("height", $("#wind").outerHeight()); // comparing to text to get values
+                    var $img = $("#humidity").find('img');
+                    $img.on('load', function() {
+                        $("#humidity").find('img').css("height", $("#wind").outerHeight());
+                    });                        
+                    window.onresize = function() {
+                        $("#humidity").find('img').css("height", $("#wind").outerHeight());
+                     }
+            $('#pressure').html('<i class="fas fa-long-arrow-alt-down orangeText"></i> ' + result.main.pressure + ' hPa');
         },
         error: function(xhr, status, error) {
             alert("Error: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
         }
     });
 
-    $("#goSearch").click(function(e){ // calling API for search  
+    $("#goSearch").click(function(){ // calling API for search  
         var key = '303bda03f4411976f702bf902ea85f54'; // API key
         var citySearchName = $('#CitySearch').val(); // search input id
 
@@ -38,16 +65,37 @@ $(document).ready(function () {
             dataType: "json",
             success: function(result) {
                 console.log(result)
-                
-                // Populating HTML
-            $('#CityCountry').html(result.name + ', ' + result.sys.country + '<small id="coords">&nbsp&nbsp&nbsp&nbsp<i class="fas fa-map-pin"></i>[' + result.coord.lat + ', ' + result.coord.lon + ']</small>');
-                $('#date').html(result.dt);    
-                $('#temp').html(result.main.temp);
-                    //if para o icone    
-                $('#maxmin').html(result.main.temp_max + '&deg; / ' + result.main.temp_min + '&deg;');
-                $('#wind').html(result.wind.speed + 'm/s');
-                $('#humidity').html(result.main.humidity);
-                $('#pressure').html(result.main.pressure);
+                                
+            // Populating HTML
+            $('#CityCountry').html(
+                result.name + ', ' + result.sys.country +
+                '<small class="smallText blueText" id="pin">&nbsp&nbsp&nbsp&nbsp<i class="fas fa-map-pin"></i></small><small class="smallText" id="coords"> [' +
+                result.coord.lat + ', ' + result.coord.lon + ']</small>');
+            // calculations for the date/time
+                var dateresult = new Date(result.dt*1000);
+                var day = dateresult.getDate();
+                var month = dateresult.getMonth();
+                var year = dateresult.getFullYear();
+            $('#date').html('<div class="m-0"><h5 id="today" class="m-0 orangeText">Today</h5></div><div class="smallText" id="todaydate">' + day + '/' + month + '/' + year + '</div>'); 
+            //removing decimals from temp results
+                var truncatedtemp = Math.trunc(result.main.temp);
+                var tempimg;
+                if ( (truncatedtemp>=0) && (truncatedtemp<=10) ) {
+                    tempimg = '<i class="far fa-snowflake';
+                } else if ( (truncatedtemp>=11) && (truncatedtemp<=25) ){
+                    tempimg = '<i class="far fa-sun';
+                } else if ( (truncatedtemp>=26) && (truncatedtemp<=50) ){
+                    tempimg = '<i class="fas fa-fire';
+                } else {
+                    tempimg = '<i class="fas fa-icicles';
+                }
+            $('#temp').html(tempimg + ' orangeText"></i> ' + truncatedtemp);
+                var truncatedmax = Math.trunc(result.main.temp_max);
+                var truncatedmin = Math.trunc(result.main.temp_min);
+            $('#maxmin').html('<i class="fas fa-temperature-low orangeText"></i> ' + truncatedmax + '&deg; / ' + truncatedmin + '&deg;');
+            $('#wind').html('<i class="fas fa-wind orangeText"></i> ' + result.wind.speed + 'm/s');
+            $('#humidity').html(/*'<img src="humid.png">' + */result.main.humidity + '&deg;');
+            $('#pressure').html('<i class="fas fa-wind orangeText"></i> ' + result.main.pressure + ' hPa');
             },
             error: function(xhr, status, error) {
                 alert("Error: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
@@ -55,7 +103,11 @@ $(document).ready(function () {
         });
     });
 
-
+    $('#CitySearch').keypress(function(e){// search on Enter key pressed
+        if(e.which == 13){
+            $('#goSearch').click();
+        }
+    });
 
 
 });

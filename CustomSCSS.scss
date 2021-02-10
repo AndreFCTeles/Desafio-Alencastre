@@ -3,6 +3,7 @@ $PrimaryTextColor:#FFFFFF;
 $Primaryfont:'Montserrat', sans-serif;
 $TodayTextColor:#FCA103;
 $ForecastColor:#3362D8;
+$DarkColor:#3d3d3d;
 $FontBold: bold;
 
 body {
@@ -13,22 +14,23 @@ body {
 
   h1{font-weight:$FontBold;}
 
+  .smallText{
+    font-size: 10px;
+    color: $DarkColor;
+  }
+  .temperature{color: $DarkColor;  
+  }
+  .orangeText{color:$TodayTextColor;}
+  .blueText{color:$ForecastColor;}
+
+
+
+
   #results{
     background: $PrimaryTextColor;
-    color: #2f2f2f;
-    font-weight: bold;
+    font-weight: $FontBold;
     
-    #CityCountry{
-      font-weight: $FontBold;
-      color: $ForecastColor;
-    }
-    #coords{font-size: 10px;}
-    #today{
-      font-size: 16px; 
-      font-weight: $FontBold;      
-      color: $TodayTextColor;
-    }
-    #todaydate{font-size: 10px;}
+    #CityCountry{color: $ForecastColor;}
 
   }
 
@@ -36,5 +38,6 @@ body {
 
 }
   
+
 
 
