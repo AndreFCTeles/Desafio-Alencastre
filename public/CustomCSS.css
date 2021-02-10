@@ -4,8 +4,28 @@ body {
   font-family: "Montserrat", sans-serif;
   text-align: left;
 }
+body h1 {
+  font-weight: bold;
+}
 body #results {
   background: #FFFFFF;
+  color: #2f2f2f;
+  font-weight: bold;
+}
+body #results #CityCountry {
+  font-weight: bold;
+  color: #3362D8 80%;
+}
+body #results #coords {
+  font-size: 10px;
+}
+body #results #today {
+  font-size: 16px;
+  font-weight: bold;
+  color: #FCA103;
+}
+body #results #todaydate {
+  font-size: 10px;
 }
 
 /*# sourceMappingURL=CustomCSS.css.map */

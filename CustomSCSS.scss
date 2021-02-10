@@ -1,6 +1,9 @@
 $PrimaryBGColor:linear-gradient(246.8deg, #88A4EC 0%, #3362D8 100%);
 $PrimaryTextColor:#FFFFFF;
 $Primaryfont:'Montserrat', sans-serif;
+$TodayTextColor:#FCA103;
+$ForecastColor:#3362D8;
+$FontBold: bold;
 
 body {
   background: $PrimaryBGColor;
@@ -8,9 +11,29 @@ body {
   font-family: $Primaryfont;
   text-align: left;
 
+  h1{font-weight:$FontBold;}
+
   #results{
     background: $PrimaryTextColor;
+    color: #2f2f2f;
+    font-weight: bold;
+    
+    #CityCountry{
+      font-weight: $FontBold;
+      color: $ForecastColor;
+    }
+    #coords{font-size: 10px;}
+    #today{
+      font-size: 16px; 
+      font-weight: $FontBold;      
+      color: $TodayTextColor;
+    }
+    #todaydate{font-size: 10px;}
+
   }
+
+
+
 }
   
 
