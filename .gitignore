@@ -1,2 +1,7 @@
 node_modules/
 tutsandtests/
+work/
+package.json
+package-lock.json
+CustomSCSS.css
+CustomSCSS.css.map
