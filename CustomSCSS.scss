@@ -13,26 +13,77 @@ body {
   text-align: left;
 
   h1{font-weight:$FontBold;}
+  div{border-radius: 20px;}
 
   .smallText{
     font-size: 10px;
     color: $DarkColor;
   }
-  .temperature{color: $DarkColor;  
-  }
+  .temperature{
+    font-size: 5vw;
+    color: $DarkColor;  
+  }  
+  .error{color: $DarkColor;}
   .orangeText{color:$TodayTextColor;}
   .blueText{color:$ForecastColor;}
+  .darkText{color:$DarkColor;}
 
 
 
+
+
+
+  #searchandbutton{
+    -moz-box-shadow: 0 0 10px #222222;
+    -webkit-box-shadow: 0 0 10px #222222;
+    box-shadow: 0 0 10px #222222;
+
+    background-color: $PrimaryTextColor;
+    z-index:100;
+    position: relative;
+
+    .searchInput {border:none;}
+  }
+
+
+  #resultsRow {
+    top:-3;
+    z-index:90;
+    position:relative;
+  }
 
   #results{
     background: $PrimaryTextColor;
     font-weight: $FontBold;
+    /*text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;*/
+    -moz-box-shadow: 0 0 10px #222222;
+    -webkit-box-shadow: 0 0 10px #222222;
+    box-shadow: 0 0 10px #222222;
     
+    .hoverTable{
+      background-color:#EFEFEF;
+      -moz-box-shadow: 0 0 10px #EFEFEF;
+      -webkit-box-shadow: 0 0 10px #EFEFEF;
+      box-shadow: 0 0 10px #EFEFEF;
+              
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+    }
     #CityCountry{color: $ForecastColor;}
 
+    .tdWidth30{width:30%;}
+    .tdWidth40{
+      width:40%;
+      text-align:middle;
+    }
+
+
+
+    .forecastTable{padding-left:3vw;}
   }
+
 
 
 
