@@ -330,7 +330,7 @@ $(document).ready(function () {
                     } else {
                         tempimg = '<i class="fas fa-icicles';
                     }
-                $('#temp').html(tempimg + ' orangeText"></i> ' + truncatedtemp);
+                $('#temp').html(tempimg + ' orangeText"></i> ' + truncatedtemp + '&deg;');
                     var truncatedmax = Math.trunc(result.main.temp_max);
                     var truncatedmin = Math.trunc(result.main.temp_min);
                 $('#maxmin').html(truncatedmax + '&deg; / ' + truncatedmin + '&deg;');
